@@ -1,0 +1,22 @@
+.container {
+  width: 973px;
+  height: 93px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.menuBox {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menuItem {
+  width: 167px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
