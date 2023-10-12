@@ -1,5 +1,11 @@
+import Content from "@/components/Content";
+
 const TIL = () => {
-  return <div>page</div>;
+  return (
+    <div>
+      <Content mt={30} />
+    </div>
+  );
 };
 
 export default TIL;
