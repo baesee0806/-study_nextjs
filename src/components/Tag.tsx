@@ -1,13 +1,12 @@
 "use client";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import styles from "../styles/Tag.module.css";
 export default function Tag() {
-  const [tag, setTag] = useState("");
   const router = useRouter();
+  const params = useSearchParams();
+  const tag = params.get("tag");
 
   const handleTagState = (value: string) => {
-    setTag(value);
     router.push(`/?tag=${value}`);
   };
   return (
@@ -15,9 +14,9 @@ export default function Tag() {
       <div
         onClick={() => handleTagState("최신순")}
         style={{
-          color: tag === "최신순" || tag === "" ? "#63e6be" : "#ffffff",
+          color: tag === "최신순" || tag === null ? "#63e6be" : "#ffffff",
           borderBottom:
-            tag === "최신순" || tag === "" ? "2px solid #63e6be" : "none",
+            tag === "최신순" || tag === null ? "2px solid #63e6be" : "none",
         }}
       >
         최신순

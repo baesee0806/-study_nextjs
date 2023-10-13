@@ -11,7 +11,7 @@ export default function Home({ searchParams }: SearchParams) {
     <div>
       <About />
       <Tag />
-      <Content searchParams={searchParams} />
+      <Content searchParams={searchParams} page="/" />
     </div>
   );
 }
