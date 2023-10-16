@@ -1,0 +1,22 @@
+.container {
+  width: 1280px;
+  height: 173px;
+  display: flex;
+  align-items: center;
+  margin: 2rem auto 0 auto;
+}
+.textBox {
+  display: flex;
+  flex-direction: column;
+}
+.myInfoBox {
+  display: flex;
+  font-size: 30px;
+}
+.myName {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+.introduce {
+  font-size: 20px;
+}
