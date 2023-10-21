@@ -1,0 +1,57 @@
+.container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.modalBox {
+  width: 800px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #beadfa;
+}
+.modalBox > form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modalBox > form > label {
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+.modalBox > form > input {
+  padding-left: 10px;
+  height: 50px;
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 30px;
+}
+.modalBox > form > input:focus {
+  outline: none;
+}
+.modalBox > form > div {
+  display: flex;
+  justify-content: space-between;
+}
+.modalBox > form > div > button {
+  width: 200px;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffffff;
+  font-size: 2rem;
+  color: #000000;
+}
+.modalBox > form > div > button:hover {
+  color: #ffffff;
+  background-color: #91c0c6;
+}
