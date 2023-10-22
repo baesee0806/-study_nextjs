@@ -8,7 +8,7 @@ export default function Create() {
   const [title, setTitle] = useState<string>("");
   const [content, setContent] = useState<string>("");
   const [category, setCategory] = useState<string>("Javascript");
-
+  const [modalState, setModalState] = useState<boolean>(false);
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     await create(category, {
@@ -18,11 +18,14 @@ export default function Create() {
       createdAt: new Date(),
     });
   };
-
+  const handleModalState = (e: React.FormEvent) => {
+    e.preventDefault();
+    setModalState(true);
+  };
   return (
     <>
-      <Modal />
-      <form className={styles.container} onSubmit={submit}>
+      {modalState ? <Modal modalState={setModalState} submit={submit} /> : null}
+      <form className={styles.container} onSubmit={handleModalState}>
         <select value={category} onChange={(e) => setCategory(e.target.value)}>
           <option value="Javascript">Javascript</option>
           <option value="React">React</option>
