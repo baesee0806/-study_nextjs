@@ -1,18 +1,27 @@
-import Content from "@/components/Content";
-import About from "@/components/About";
-import Tag from "@/components/Tag";
-import styles from "../styles/Main.module.css";
-interface SearchParams {
-  searchParams: {
-    tag: string;
-  };
-}
-export default function Home({ searchParams }: SearchParams) {
+import { imgUrls } from "@/data";
+import Image from "next/image";
+import Link from "next/link";
+
+const Home = () => {
   return (
-    <div>
-      <About />
-      <Tag />
-      <Content searchParams={searchParams} page="/" />
+    <div className="gallery">
+      {imgUrls.map((imgUrl, index) => {
+        return (
+          <Link key={index} href={`/photo/${index}`}>
+            <Image
+              src={imgUrl}
+              alt={imgUrl}
+              width={100}
+              height={100}
+              style={{ width: "100%", height: "100%", objectFit: "contain" }}
+              sizes="60vw"
+              priority
+            />
+          </Link>
+        );
+      })}
     </div>
   );
-}
+};
+
+export default Home;
