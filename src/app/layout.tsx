@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Header from "../components/Header";
 import "./global.css";
 import { Roboto } from "next/font/google";
+import Nav from "@/components/Nav";
 
 const roboto = Roboto({
   weight: "900",
@@ -10,20 +10,25 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Wani_Blog",
-  description: "개인 블로그 입니다.",
+  title: "",
+  description: "",
 };
 
 export default function RootLayout({
   children,
+  parallel,
 }: {
   children: React.ReactNode;
+  parallel: React.ReactNode;
 }) {
   return (
     <html className={roboto.className}>
       <body>
-        <Header />
-        {children}
+        <Nav />
+        <main>
+          {children}
+          {parallel}
+        </main>
       </body>
     </html>
   );
